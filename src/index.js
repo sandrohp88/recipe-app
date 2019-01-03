@@ -1,5 +1,6 @@
-import { createRecipe, saveRecipe, removeRecipe } from './recipe'
+import { loadRecipes, createRecipe, saveRecipe, removeRecipe } from './recipe'
+import { renderRecipes } from './view'
 const name = 'Torrejas'
-const description = 'Slice the bred, Mix with eggs, Cook'
-const ingredients = ['eggs', 'vanilla', 'cinnamon', 'sugar']
-const id  = createRecipe(name, description,ingredients)
+const description = 'Cook in a frypan with enough vegetable oil'
+const ingredients = ['eggs', 'oil','vanila']
+renderRecipes()
