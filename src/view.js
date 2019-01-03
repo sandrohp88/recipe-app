@@ -1,7 +1,9 @@
 import { getRecipes, recipeSummary } from './recipe'
+import { searchRecipe } from "./filters";
 const renderRecipes = () => {
   const recipesContainer = document.querySelector('#recipes-container')
-  const recipes = getRecipes()
+  recipesContainer.innerHTML = ''
+  const recipes = searchRecipe()
   if (recipes) {
     // Render recipes
     recipes.forEach(recipe => {
