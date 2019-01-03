@@ -6,8 +6,20 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Boilerplate App</title>
 </head>
+<header>
+  <h1>Recipe App</h1>
+  <input type="text" name="search" id="search-recipe" placeholder="Search">
+</header>
 <body>
-  <h1>Boilerplate App</h1>
-  <script src="scripts/main.js"></script>
+  <div id="list">
+    <ul id="recipes-list">
+      <li>Recipe 1</li>
+      <li>Recipe 2</li>
+      <li>Recipe 3</li>
+      <li>Recipe 4</li>
+    </ul>
+  </div>
+  <button id="add-recipe">Add recipe</button>
+  <script src="scripts/index-bundle.js"></script>
 </body>
 </html>
