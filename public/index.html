@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Boilerplate App</title>
-</head>
-<header>
-  <h1>Recipe App</h1>
-  <input type="text" name="search" id="search-recipe" placeholder="Search">
-</header>
-<body>
-  <div id="recipes-container">
-    <!-- <ul id="recipes-list">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Recipe App</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <h1 class="header__title">Recipe App</h1>
+    </header>
+    <div class="actions">
+      <div class="actions__container">
+        <input type="text" class="input" name="search" id="search-recipe" placeholder="Search" />
+        </div>
+      </div>
+    </div>
+    <div id="recipes-container" class="container">
+      <!-- <ul id="recipes-list">
     </ul> -->
-  </div>
-  <button id="btn-add-recipe">Add recipe</button>
-  <script src="scripts/index-bundle.js"></script>
-</body>
+    </div>
+    <div class="container">
+      <button id="btn-add-recipe" class="button">
+        Add recipe
+      </button>
+    </div>
+    <script src="scripts/index-bundle.js"></script>
+  </body>
 </html>

@@ -29,23 +29,23 @@ const createRecipe = () => {
   saveRecipes()
   return id
 }
-const updateRecipe = (recipeId, updates) =>{
+const updateRecipe = (recipeId, updates) => {
   const recipe = recipes.find(recipe => recipe.id === recipeId)
-  if(recipe){
-    if(typeof updates.name === 'string'){
+  if (recipe) {
+    if (typeof updates.name === 'string') {
       recipe.name = updates.name
       recipe.updatedAt = moment().valueOf()
     }
-    if(typeof updates.description === 'string'){
+    if (typeof updates.description === 'string') {
       recipe.description = updates.description
       recipe.updatedAt = moment().valueOf()
     }
-    if(typeof updates.ingredients === 'object'){
+    if (typeof updates.ingredients === 'object') {
       recipe.ingredients = updates.ingredients
       recipe.updatedAt = moment().valueOf()
     }
     saveRecipes()
-  }else{
+  } else {
     throw new Error('No recipe found')
   }
 }
@@ -61,6 +61,7 @@ const removeRecipe = recipeId => {
 }
 const recipeSummary = recipeId => {
   const recipe = recipes.find(recipe => recipeId === recipe.id)
+
   // Found recipe
   let counter = 0
   if (recipe) {
@@ -69,13 +70,14 @@ const recipeSummary = recipeId => {
         counter++
       }
     })
-    let summary = ''
+    let summary = 'Locol'
+
     if (counter === recipe.ingredients.length) {
       summary = 'You have all the ingredients'
     } else if (counter === 0) {
       summary = "You don't have any of the ingredients"
     } else {
-      summary = `You have ${counter} of ${recipes.ingredients.length}`
+      summary = `You have ${counter} of ${recipe.ingredients.length} ingredients`
     }
     return summary
   } else {
@@ -83,4 +85,12 @@ const recipeSummary = recipeId => {
   }
 }
 recipes = loadRecipes()
-export { loadRecipes,createRecipe, saveRecipes, updateRecipe,getRecipes, recipeSummary, removeRecipe }
+export {
+  loadRecipes,
+  createRecipe,
+  saveRecipes,
+  updateRecipe,
+  getRecipes,
+  recipeSummary,
+  removeRecipe
+}

@@ -11,8 +11,14 @@ const renderRecipes = () => {
       recipeContainer.addEventListener('click', sender =>{
         location.assign(`/edit.html#${recipe.id}`)
       })
-      const recipeName = document.createElement('h2')
+      const recipeName = document.createElement('a')
       const recipeText = document.createElement('p')
+
+      // Add some styles
+      recipeContainer.classList.add('list-item')
+      recipeName.classList.add('list-item__title')
+      recipeText.classList.add('list-item__subtitle')
+
       recipeName.textContent = recipe.name
       recipeText.textContent = recipeSummary(recipe.id)
       recipeContainer.appendChild(recipeName)
