@@ -13,7 +13,7 @@ const createRecipe = () => {
   const timestamp = moment().valueOf()
   const newRecipe = {}
   newRecipe.id = id
-  newRecipe.name = ''
+  newRecipe.name = 'Unnamed recipe'
   newRecipe.description = ''
   newRecipe.createAt = timestamp
   newRecipe.updatedAt = timestamp

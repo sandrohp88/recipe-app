@@ -1,5 +1,5 @@
-import { getRecipes, recipeSummary } from './recipe'
-import { searchRecipe } from "./filters";
+import { getRecipes, recipeSummary, removeRecipe } from './recipe'
+import { searchRecipe } from './filters'
 const renderRecipes = () => {
   const recipesContainer = document.querySelector('#recipes-container')
   recipesContainer.innerHTML = ''
@@ -8,6 +8,9 @@ const renderRecipes = () => {
     // Render recipes
     recipes.forEach(recipe => {
       const recipeContainer = document.createElement('div')
+      recipeContainer.addEventListener('click', sender =>{
+        location.assign(`/edit.html#${recipe.id}`)
+      })
       const recipeName = document.createElement('h2')
       const recipeText = document.createElement('p')
       recipeName.textContent = recipe.name
@@ -23,5 +26,6 @@ const renderRecipes = () => {
     recipesContainer.appendChild(noRecipesParagraph)
   }
 }
+
 // const createRecipeSummaryDOM = recipe => {}
-export { renderRecipes }
+export { renderRecipes, renderIngredients }
